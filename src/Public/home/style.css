@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none; }
+
+html, body {
+  width: 100%;
+  font-weight: normal; }
+
+@-webkit-keyframes headerTextLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes headerTextLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@-webkit-keyframes headerTextRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes headerTextRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+.inline-div {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline; }
+
+.pointer-cursor {
+  cursor: pointer; }
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center; }
+
+.full {
+  width: 100%;
+  height: 100%; }
+
+.full-absolute {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+.full-relative {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.inline-div {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.pointer-cursor {
+  cursor: pointer; }
+
+/*need complete*/
+body {
+  background: #e6e6e6; }
+
+.screen {
+  width: 100%;
+  height: 400px;
+  border: none;
+  box-shadow: none;
+  display: block;
+  position: relative;
+  background: -moz-linear-gradient(45deg, #020031 0, #6d3353 100%);
+  /*Mozilla*/
+  background: -webkit-gradient(45deg, #020031 0, #6d3353 100%);
+  /*Old gradient for webkit*/
+  background: -webkit-linear-gradient(45deg, #020031 0, #6d3353 100%);
+  /*new gradient for Webkit*/
+  background: -o-linear-gradient(45deg, #020031 0, #6d3353 100%);
+  /*Opera11*/
+  background: linear-gradient(45deg, #020031 0, #6d3353 100%);
+  position: relative;
+  color: white;
+  margin-bottom: 20px; }
+  .screen .screen-title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 38px; }
+  .screen .screen-des {
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px; }
+  .screen .screen-btn {
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px; }
+
+.album-box-box {
+  padding: 5px 50px 50px;
+  background: -moz-linear-gradient(45deg, lightgray 0, #f4f4f4 100%);
+  /*Mozilla*/
+  background: -webkit-gradient(45deg, lightgray 0, #f4f4f4 100%);
+  /*Old gradient for webkit*/
+  background: -webkit-linear-gradient(45deg, lightgray 0, #f4f4f4 100%);
+  /*new gradient for Webkit*/
+  background: -o-linear-gradient(45deg, lightgray 0, #f4f4f4 100%);
+  /*Opera11*/
+  background: linear-gradient(45deg, lightgray 0, #f4f4f4 100%); }
+
+.album-box-border-head {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  position: relative;
+  left: -14px;
+  margin: 0;
+  padding: 0; }
+
+.album-box-border {
+  padding: 20px 50px;
+  border-left: 1px solid #ccc; }
+
+.album-box {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-bottom: 50px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition: box-shadow 1s linear .01s, scale 2s linear .01s;
+  transition: box-shadow 1s linear .01s, scale 2s linear .01s; }
+  .album-box:hover {
+    box-shadow: 10px 10px 5px #888888;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 200; }
+  .album-box .album-box-imglength {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 30px;
+    color: #990000; }
+  .album-box img {
+    width: 100%; }
+  .album-box .album-box-content {
+    text-align: left;
+    padding: 10px 5px 0; }
+    .album-box .album-box-content img {
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+      position: relative;
+      top: -5px; }
+
+.album-box-border-leaf {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  position: relative;
+  left: -36px; }
