@@ -1,0 +1,16 @@
+1、需求分析
+需求分析，需求提取，形成文档
+
+2、环境搭建
+搭建开发环境：
+在windows平台，使用php+mysql+apache作为服务开发支撑
+
+3、项目构建
+数据库：是用powerdesigner进行数据库设计，形成sql文件，导入数据库
+后台：是用phpmyadmin进行数据库管理，使用php框架：thinkphp
+前端：是用grunt进行前端项目构建，通过使用node与npm管理前端开发包，前端开发使用sass+bootstrap
+
+4、项目管理
+使用git与github进行项目代码托管
+
+

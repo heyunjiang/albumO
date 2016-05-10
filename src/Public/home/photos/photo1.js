@@ -1,0 +1,1 @@
+console.log("救灾这个里面写js")

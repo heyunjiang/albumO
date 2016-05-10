@@ -79,7 +79,7 @@
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
+							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor"></a>
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
 								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>

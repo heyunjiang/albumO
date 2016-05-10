@@ -10,4 +10,8 @@ class IndexController extends Controller {
     	$user = M('user');
     	$this->display();
     }
+    public function photos(){
+    	$user = M('user');
+    	$this->display();
+    }
 }
