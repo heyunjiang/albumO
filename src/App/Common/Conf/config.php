@@ -12,4 +12,10 @@ return array(
 	'DB_PWD'  =>'root',
 	'DB_PORT' =>'3306',
 	'DB_CHARSET'  =>'utf8',
+	'MESSAGE_LANG' => array(
+		'1' => '注册失败',
+		'2' => '注册成功',
+		'3' => '注册失败,用户已经存在',
+		'4' => '未登录，请先登录',
+	),
 );

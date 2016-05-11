@@ -3,8 +3,9 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- ie兼容 -->
 	<meta charset="UTF-8">
-	<title>header </title>
+	<title>web相册</title>
 	<link href="__ROOT__/Public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="__ROOT__/Public/css/sweetalert.css" rel="stylesheet">
 	<link href="__ROOT__/Public/home/style.css" rel="stylesheet">
   <link href="__ROOT__/Public/home/photos/photo1.css" rel="stylesheet">
 </head>
@@ -24,9 +25,14 @@
         <li><a href="{:U('Home/Index/myalbum')}">我的相册</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a>欢迎您：游客</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
-        <li><a href="#">注册</a></li>
+        <if condition="session('?name')">
+          <li><a>欢迎您：{$Think.session.name}</a></li>
+          <li><a href="{:U('Home/Index/login_out')}">注销</a></li>
+        <else />
+          <li><a>欢迎您：游客</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#register">注册</a></li>
+        </if>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
