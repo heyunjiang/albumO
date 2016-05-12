@@ -11,10 +11,11 @@
 			bigHidden();
 		});
 		$(".imgBox img").attr("src",img.src);
+		var ImgObj=new Image();
+		ImgObj.src = img.src;
 		var bigImg = $(".imgBox img")[0];
-
-		if(bigImg.width < (screen.width*0.9)/2){
-			bigImg.style.width = bigImg.width+"px";
+		if(ImgObj.width < (screen.width*0.9)/2){
+			bigImg.style.width = ImgObj.width+"px";
 		}else {
 			bigImg.style.width = (screen.width*0.9)/2+"px";
 		} 
