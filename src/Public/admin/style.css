@@ -339,4 +339,12 @@ img {
       width: 100%;
       min-height: 50px;
       background: white;
-      border: 1px solid #ccc; }
+      border: 1px solid #ccc;
+      padding-top: 50px; }
+
+.title {
+  height: 100px;
+  line-height: 100px;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px; }

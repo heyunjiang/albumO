@@ -69,6 +69,13 @@
       min-height: 50px;
       background: white;
       border: 1px solid #ccc;
+      padding-top: 50px;
     }
   }
+}
+
+.title {
+   @include horizontal-line(100px,100px,28px);
+  text-align:center;
+  margin-bottom: 30px;
 }
