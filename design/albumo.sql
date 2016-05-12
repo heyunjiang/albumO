@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 05 月 09 日 15:17
+-- 生成日期: 2016 年 05 月 12 日 22:14
 -- 服务器版本: 5.5.47
 -- PHP 版本: 5.3.29
 
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `albumcategory` (
   `user_id` int(11) NOT NULL,
   `ac_name` varchar(50) NOT NULL,
   `ac_description` longtext,
+  `ac_add_time` date NOT NULL,
   PRIMARY KEY (`ac_id`),
   KEY `FK_createCate` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -49,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `img` (
   `img_description` varchar(500) DEFAULT NULL,
   `img_click` bigint(20) DEFAULT NULL,
   `img_main` char(2) NOT NULL DEFAULT '0',
+  `img_add_time` date NOT NULL,
   PRIMARY KEY (`img_id`),
   KEY `FK_img_album` (`ac_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -103,14 +105,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `power` char(2) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- 转存表中的数据 `user`
 --
 
 INSERT INTO `user` (`email`, `password`, `nickname`, `sex`, `headurl`, `user_id`, `power`) VALUES
-('598119677@qq.com', '111111', '小江哥', '0', '', 1, '2');
+('832@qq.com', '111', 'hello', '0', '/Public/img/head/head1463060847.jpg', 18, '1'),
+('1065031646@qq.com', '111', '萌萌哒', '0', '/Public/img/head/head1462947740.jpg', 17, '1'),
+('598119677@qq.com', '111', '小江哥', '0', '/Public/img/head/head1462947674.jpg', 16, '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
