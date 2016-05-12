@@ -3,9 +3,31 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- ie兼容 -->
 	<meta charset="UTF-8">
-	<title>header</title>
+	<title>web相册管理</title>
 	<link href="__ROOT__/Public/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="__ROOT__/Public/css/sweetalert.css" rel="stylesheet">
 	<link href="__ROOT__/Public/admin/style.css" rel="stylesheet">
 </head>
 <body>
-	
+<nav class="navbar navbar-default" style="margin-bottom: 0;border-radius: 0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{:U('Home/Index/index')}">
+      	<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a>相册管理</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <if condition="session('?name')">
+          <li><a>欢迎您：{$Think.session.name}</a></li>
+          <li><a href="{:U('Home/Index/index')}">前台</a></li>
+        </if>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

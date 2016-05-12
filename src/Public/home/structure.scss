@@ -103,4 +103,11 @@ $headerTextTranslateX:100%;
    display: block;
    position: relative;
 }/*need complete*/
+@mixin my-position($style: absolute,$left: 0,$top: 0,$z-index: 1){
+  position: $style;
+  left: $left;
+  top: $top;
+  z-index: $z-index;
+}
+
 

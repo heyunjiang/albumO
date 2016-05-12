@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- ie兼容 -->
 	<meta charset="UTF-8">
-	<title>header </title>
+	<title>web相册</title>
 	<link href="/albumO/src/Public/css/bootstrap.min.css" rel="stylesheet">
   <link href="/albumO/src/Public/css/sweetalert.css" rel="stylesheet">
 	<link href="/albumO/src/Public/home/style.css" rel="stylesheet">
@@ -23,6 +23,7 @@
       <ul class="nav navbar-nav">
         <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
         <li><a href="<?php echo U('Home/Index/myalbum');?>">我的相册</a></li>
+        <?php if(session('?name')): ?><li><a href="<?php echo U('Admin/Admin/admin');?>">相册管理</a></li><?php endif; ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(session('?name')): ?><li><a>欢迎您：<?php echo (session('name')); ?></a></li>

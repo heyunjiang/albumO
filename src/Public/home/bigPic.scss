@@ -1,0 +1,32 @@
+.bigPicBox {
+	@include my-box(100%,100%,none,none);
+	background: rgba(0,0,0,0.8);
+	@include my-position(absolute,0,0,300);
+	padding: 5%;
+}
+.imgBox {
+	@include my-box(50%,100%,none,none);
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(center);
+	z-index: 301;
+}
+.discussBox {
+	@include my-box(45%,85%,none,none);
+	@include my-position(absolute,50%,0,302);
+	margin-top: 5%;
+	background: rgba(white,0.8);
+	padding: 10px;
+	.close-btn {
+		@include my-box(50px,50px,none,none);
+		@include my-position(absolute,102%,-15px,303);
+		border-radius: 25px;
+		background: white;
+		font-size: 35px;
+		text-align: center;
+		&:hover {
+			background: black;
+			color: white;
+		}
+	}
+}

@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- ie兼容 -->
 	<meta charset="UTF-8">
-	<title>header </title>
+	<title>web相册</title>
 	<link href="/albumO/src/Public/css/bootstrap.min.css" rel="stylesheet">
   <link href="/albumO/src/Public/css/sweetalert.css" rel="stylesheet">
 	<link href="/albumO/src/Public/home/style.css" rel="stylesheet">
@@ -23,6 +23,7 @@
       <ul class="nav navbar-nav">
         <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
         <li><a href="<?php echo U('Home/Index/myalbum');?>">我的相册</a></li>
+        <?php if(session('?name')): ?><li><a href="<?php echo U('Admin/Admin/admin');?>">相册管理</a></li><?php endif; ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(session('?name')): ?><li><a>欢迎您：<?php echo (session('name')); ?></a></li>
@@ -36,7 +37,54 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
+<div class="wang-container">
+   <div id="wang-btn">play</div>
+   <div id="wang-wrp" class="wang-no-style" >
+      <img src="/albumO/src/Public/img/icons/1.jpg" data-id="1">
+      <img src="/albumO/src/Public/img/icons/2.jpg" data-id="2">
+      <img src="/albumO/src/Public/img/icons/3.jpg" data-id="3">
+      <img src="/albumO/src/Public/img/icons/4.jpg" data-id="4">
+      <img src="/albumO/src/Public/img/icons/5.jpg" data-id="5">
+      <img src="/albumO/src/Public/img/icons/base1.png" data-id="6">
+      <img src="/albumO/src/Public/img/icons/base2.png" data-id="7">
+      <img src="/albumO/src/Public/img/icons/base3.png" >
+      <img src="/albumO/src/Public/img/icons/base4.png" >
+      <img src="/albumO/src/Public/img/icons/base5.png" >
+      <img src="/albumO/src/Public/img/icons/ly1.png" >
+      <img src="/albumO/src/Public/img/icons/ly2.png" >
+      <img src="/albumO/src/Public/img/icons/ly3.png" >
+      <img src="/albumO/src/Public/img/icons/1.jpg" >
+      <img src="/albumO/src/Public/img/icons/2.jpg" >
+      <img src="/albumO/src/Public/img/icons/3.jpg" >
+      <img src="/albumO/src/Public/img/icons/4.jpg" >
+      <img src="/albumO/src/Public/img/icons/5.jpg" >
+      <img src="/albumO/src/Public/img/icons/base1.png" >
+      <img src="/albumO/src/Public/img/icons/base2.png" >
+      <img src="/albumO/src/Public/img/icons/base3.png" >
+      <img src="/albumO/src/Public/img/icons/base4.png" >
+      <img src="/albumO/src/Public/img/icons/base5.png" >
+      <img src="/albumO/src/Public/img/icons/ly1.png" >
+      <img src="/albumO/src/Public/img/icons/ly2.png" >
+      <img src="/albumO/src/Public/img/icons/ly3.png" >
+      <img src="/albumO/src/Public/img/icons/1.jpg" >
+      <img src="/albumO/src/Public/img/icons/2.jpg" >
+   </div>
+</div>
+   
+<div class="bigPicBox hidden">
+      <div class="imgBox">
+            <img src="#" >
+      </div>
+      <div class="discussBox">
+            <div class="close-btn pointer-cursor">x</div>
+            <div class="imgUser">上传者</div>
+            <div class="imgdis">描述</div>
+            <div class="imgclick">点赞</div>
+            <div class="imgComment">评论</div>
+            <div class="imgCommentList">评论列表</div>
+      </div>
+</div>
+  
 
 	<script src="/albumO/src/Public/js/jquery.min.js"></script>
 	<script src="/albumO/src/Public/js/bootstrap.min.js"></script>

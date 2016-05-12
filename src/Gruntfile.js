@@ -18,7 +18,8 @@ module.exports = function (grunt) {
             scripts: {
                 files: [
                     'Public/admin/style.scss',
-                    'Public/home/style.scss'
+                    'Public/home/style.scss',
+                    'Public/home/bigPic.scss'
                 ],
                 tasks: ['sass']
             }

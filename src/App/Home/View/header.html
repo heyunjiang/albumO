@@ -23,6 +23,9 @@
       <ul class="nav navbar-nav">
         <li><a href="{:U('Home/Index/index')}">首页</a></li>
         <li><a href="{:U('Home/Index/myalbum')}">我的相册</a></li>
+        <if condition="session('?name')">
+          <li><a href="{:U('Admin/Admin/admin')}">相册管理</a></li>
+        </if>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <if condition="session('?name')">

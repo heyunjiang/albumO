@@ -1,5 +1,6 @@
 @import "init";
 @import "structure";
+@import "flex";
 
 $bodybgcolor: rgba(230,230,230,1);
 
@@ -47,13 +48,11 @@ body {
   margin-bottom: 50px;
   padding: 5px;
   text-align: center;
-  -webkit-transition: box-shadow 1s linear .01s, scale 2s linear .01s;
-  transition: box-shadow 1s linear .01s, scale 2s linear .01s;
+  position: relative;
+  -webkit-transition: box-shadow .3s linear .01s;
+  transition: box-shadow .3s linear .01s;
   &:hover {
     box-shadow: 10px 10px 5px #888888;
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
     z-index: 200;
   }
   .album-box-imglength {
@@ -83,3 +82,7 @@ body {
   position:relative;
   left: -36px;
 }
+
+
+
+@import "bigPic";
