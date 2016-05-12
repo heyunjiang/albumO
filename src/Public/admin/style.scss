@@ -1,24 +1,74 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+@import "../home/init";
+@import "../home/structure";
+@import "../home/flex";
 
-img {
-  -webkit-user-drag: none;
-  user-drag: none;
-}
 
-html, body {
-  width: 100%;
+#my-nav {
+  width: 200px;
   height: 100%;
-  overflow: hidden;
-  font-family: 'SimHei', sans-serif;
-  font-weight: normal;
+  @include my-position(absolute,0,0);
+  background: #006666;
+  z-index: 2;
+  a {
+    color: white;
+  }
+  .panel {
+    border: none;
+  }
+  .panel-body {
+    padding: 0;
+    border: none;
+  }
+  .panel-heading {
+    background: #006633;
+  }
+  li {
+    width: 200px;
+    @include horizontal-line(30px,30px,16px);
+    text-align: center;
+    background: #000033;
+  }
+  .nav-head {
+    width: 100%;
+    @include horizontal-line(100px,100px,20px);
+    color: white;
+    img {
+      width:60px;
+      height:60px;
+      border-radius: 30px;
+      margin-right: 20px;
+    }
+  }
 }
 
-$bgcolor: rgba(248,248,248,1);
-
-body {
-	background-color:$bgcolor;
+.my-content {
+  @include my-position(absolute,0,0);
+  @include my-box(100%,100%,none,none);
+  padding: 5px 5px 5px 205px;
+  .my-content-box {
+    @include my-box(100%,100%,none,none);
+    position: relative;
+    background: rgba(233,233,233,1);
+    .content-head {
+      @include my-box(100%,15%,1px solid #ccc,none);
+      background: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      .head-title {
+        @include horizontal-line(50px,50px,28px);
+        text-align:center;
+        font-weight: bold;
+      }
+      .head-des {
+        @include horizontal-line(50px,50px,20px);
+        text-align:center;
+      }
+    }
+    .content {
+      width: 100%;
+      min-height: 50px;
+      background: white;
+      border: 1px solid #ccc;
+    }
+  }
 }
