@@ -222,6 +222,10 @@ body {
   align-items: center;
   z-index: 301; }
 
+.user-name {
+  color: #006699;
+  margin-right: 10px; }
+
 .discussBox {
   width: 45%;
   height: 85%;
@@ -235,7 +239,7 @@ body {
   z-index: 302;
   margin-top: 5%;
   background: rgba(255, 255, 255, 0.8);
-  padding: 10px; }
+  padding: 20px; }
   .discussBox .close-btn {
     width: 50px;
     height: 50px;
@@ -254,3 +258,46 @@ body {
     .discussBox .close-btn:hover {
       background: black;
       color: white; }
+  .discussBox .imgUser {
+    position: relative; }
+    .discussBox .imgUser p {
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+      box-shadow: 0 2px 5px #888888;
+      padding-left: 2px; }
+      .discussBox .imgUser p .time {
+        font-size: 14px; }
+    .discussBox .imgUser img {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+      margin-right: 10px; }
+  .discussBox .imgdis {
+    font-size: 18px;
+    padding-left: 2px;
+    margin: 10px 0; }
+  .discussBox .imgclick {
+    border-bottom: 1px solid #999999;
+    margin: 0 0 10px;
+    padding-bottom: 3px;
+    font-size: 28px; }
+    .discussBox .imgclick .imgclick-word {
+      margin-left: 2px;
+      font-size: 16px; }
+  .discussBox .imgComment {
+    margin: 20px 0; }
+  .discussBox .imgCommentList {
+    width: 100%;
+    position: relative; }
+    .discussBox .imgCommentList .commentList {
+      position: relative;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5); }
+      .discussBox .imgCommentList .commentList img {
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        margin-right: 10px; }
+      .discussBox .imgCommentList .commentList .commentText {
+        margin-left: 40px; }

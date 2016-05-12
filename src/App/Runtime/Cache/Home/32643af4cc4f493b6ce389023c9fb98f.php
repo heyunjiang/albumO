@@ -38,7 +38,7 @@
 </nav>
 
 <div class="wang-container">
-   <div id="wang-btn">play</div>
+   <div id="wang-btn">cool</div>
    <div id="wang-wrp" class="wang-no-style" >
       <img src="/albumO/src/Public/img/icons/1.jpg" data-id="1">
       <img src="/albumO/src/Public/img/icons/2.jpg" data-id="2">
@@ -55,19 +55,9 @@
       <img src="/albumO/src/Public/img/icons/ly3.png" >
       <img src="/albumO/src/Public/img/icons/1.jpg" >
       <img src="/albumO/src/Public/img/icons/2.jpg" >
-      <img src="/albumO/src/Public/img/icons/3.jpg" >
-      <img src="/albumO/src/Public/img/icons/4.jpg" >
-      <img src="/albumO/src/Public/img/icons/5.jpg" >
-      <img src="/albumO/src/Public/img/icons/base1.png" >
-      <img src="/albumO/src/Public/img/icons/base2.png" >
-      <img src="/albumO/src/Public/img/icons/base3.png" >
-      <img src="/albumO/src/Public/img/icons/base4.png" >
-      <img src="/albumO/src/Public/img/icons/base5.png" >
-      <img src="/albumO/src/Public/img/icons/ly1.png" >
-      <img src="/albumO/src/Public/img/icons/ly2.png" >
-      <img src="/albumO/src/Public/img/icons/ly3.png" >
-      <img src="/albumO/src/Public/img/icons/1.jpg" >
-      <img src="/albumO/src/Public/img/icons/2.jpg" >
+      <img src="/albumO/src/Public/img/icons/5.jpg" data-id="5">
+      <img src="/albumO/src/Public/img/icons/base1.png" data-id="6">
+      <img src="/albumO/src/Public/img/icons/base2.png" data-id="7">
    </div>
 </div>
    
@@ -77,11 +67,39 @@
       </div>
       <div class="discussBox">
             <div class="close-btn pointer-cursor">x</div>
-            <div class="imgUser">上传者</div>
-            <div class="imgdis">描述</div>
-            <div class="imgclick">点赞</div>
-            <div class="imgComment">评论</div>
-            <div class="imgCommentList">评论列表</div>
+            <div class="imgUser">
+                  <p><img src="/albumO/src/Public/img/icons/border-head1.jpg"><span class="user-name">小天使</span><span class="time">2016.5.12</span></p>
+            </div>
+            <div class="imgdis">都和这些款式差不多。各种颜色都有 夏天来了 背个简单的包包</div>
+            <div class="imgclick">
+                  <span class="glyphicon glyphicon-heart-empty text-danger pointer-cursor" aria-hidden="true"></span>
+                  <div class="imgclick-word inline-div"><span style="color: #CC0000;">10</span>&nbsp;人喜欢</div>
+            </div>
+            <div class="imgComment">
+                  <form class="form-inline">
+                      <div class="form-group">
+                          <label for="imgComment-input"></label>
+                          <input type="text" class="form-control" id="imgComment-input" placeholder="我也说一句">
+                        </div>
+                        <?php if(session('?name')): ?><button type="submit" class="btn btn-success">评论</button>
+                        <?php else: ?>
+                           <button type="submit" class="btn btn-success" disabled>评论</button><?php endif; ?>
+                  </form>
+            </div>
+            <div class="imgCommentList">
+                  <div class="commentList">
+                        <img src="/albumO/src/Public/img/icons/border-head.jpg"><span class="user-name">小天使</span>
+                        <p class="commentText">我都不知道你在说什么</p>
+                  </div>
+                  <div class="commentList">
+                        <img src="/albumO/src/Public/img/icons/border-head1.jpg"><span class="user-name">小天使</span>
+                        <p class="commentText">天苍苍，野莽莽</p>
+                  </div>
+                  <div class="commentList">
+                        <img src="/albumO/src/Public/img/icons/border-head.jpg"><span class="user-name">小天使</span>
+                        <p class="commentText">尼真的好帅</p>
+                  </div>
+            </div>
       </div>
 </div>
   

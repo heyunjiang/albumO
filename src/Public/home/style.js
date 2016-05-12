@@ -10,6 +10,7 @@
 		$(".close-btn").on('click',function(e){
 			bigHidden();
 		});
+		$(".bigPicBox").css("top",document.body.scrollTop);
 		$(".imgBox img").attr("src",img.src);
 		var ImgObj=new Image();
 		ImgObj.src = img.src;
@@ -18,7 +19,8 @@
 			bigImg.style.width = ImgObj.width+"px";
 		}else {
 			bigImg.style.width = (screen.width*0.9)/2+"px";
-		} 
+		}
+		//above no change
 
 	}
 	function bigHidden() {

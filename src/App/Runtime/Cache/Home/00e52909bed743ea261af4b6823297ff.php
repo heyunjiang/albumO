@@ -41,7 +41,9 @@
 	<div class="center-text">
 		<p class="screen-title">web相册</p>
 		<p class="screen-des">这里是全世界最漂亮的网络相册</p>
-		<p class="screen-btn"><button class="btn btn-success">开始使用</button></p>
+		<?php if(session('?name')): ?><p class="screen-btn"><a href="<?php echo U('Home/Index/myalbum');?>" class="btn btn-success">我的相册</a></p>
+        <?php else: ?>
+			<p class="screen-btn"><button class="btn btn-success" data-toggle="modal" data-target="#login">开始使用</button></p><?php endif; ?>
 	</div>
 </div>
 <div class="container">
@@ -56,17 +58,17 @@
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor"></a>
+							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/car1.jpg" class="pointer-cursor"></a>
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test1.png" class="pointer-cursor">
+							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/test1.png" class="pointer-cursor"></a>
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
 								<p><img src="/albumO/src/Public/img/icons/border-head.jpg"> 曾林</p>
@@ -76,20 +78,20 @@
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
+							<img src="/albumO/src/Public/img/icons/food1.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
+							<img src="/albumO/src/Public/img/icons/food2.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
 							</div>
 						</div>
@@ -102,10 +104,30 @@
 					</div>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
+							<img src="/albumO/src/Public/img/icons/food3.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
+								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<div class="album-box">
+							<img src="/albumO/src/Public/img/icons/food4.png" class="pointer-cursor">
+							<div class="album-box-imglength">23</div>
+							<div class="album-box-content">
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
+								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<div class="album-box">
+							<img src="/albumO/src/Public/img/icons/food5.png" class="pointer-cursor">
+							<div class="album-box-imglength">23</div>
+							<div class="album-box-content">
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
 							</div>
 						</div>
@@ -115,7 +137,7 @@
 							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
 							</div>
 						</div>
@@ -125,7 +147,7 @@
 							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
 							</div>
 						</div>
@@ -135,27 +157,7 @@
 							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
 							<div class="album-box-imglength">23</div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
-							<div class="album-box-imglength">23</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
-							<div class="album-box-imglength">23</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 何运江</p>
+								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
 								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
 							</div>
 						</div>

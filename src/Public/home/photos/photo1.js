@@ -53,7 +53,7 @@ $(document).ready(function(){
                          var change_paly1=function(){
                            $("#wang-wrp").removeClass("wang-no-style").addClass ("wang-play-style");
                            $("#wang-wrp>img").addClass("wang-img-style");                             
-                           $("#wang-btn").html("back");}
+                           $("#wang-btn").html("falls");}
 
                            var change_paly2=function(){
                             $("#wang-wrp").removeClass("wang-play-style").addClass ("wang-no-style");                             

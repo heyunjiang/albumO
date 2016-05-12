@@ -11,12 +11,19 @@
 	@include align-items(center);
 	z-index: 301;
 }
+$padding-left: 2px;
+
+.user-name {
+	color: #006699;
+	margin-right: 10px;
+}
+//comment area
 .discussBox {
 	@include my-box(45%,85%,none,none);
 	@include my-position(absolute,50%,0,302);
 	margin-top: 5%;
 	background: rgba(white,0.8);
-	padding: 10px;
+	padding: 20px;
 	.close-btn {
 		@include my-box(50px,50px,none,none);
 		@include my-position(absolute,102%,-15px,303);
@@ -27,6 +34,59 @@
 		&:hover {
 			background: black;
 			color: white;
+		}
+	}
+	.imgUser {
+		position: relative;
+		p {
+			@include horizontal-line(50px,50px,16px);
+			box-shadow: 0 2px 5px #888888;
+			padding-left: $padding-left;
+			.time {
+				font-size: 14px;
+			}
+		}
+		img {
+			position: relative;
+			height: 40px;
+			width: 40px;
+			border-radius: 20px;
+			margin-right: 10px;
+		}
+	}
+	.imgdis {
+		font-size: 18px;
+		padding-left: $padding-left;
+		margin: 10px 0;
+	}
+	.imgclick {
+		border-bottom: 1px solid #999999;
+		margin: 0 0 10px;
+		padding-bottom: 3px;
+		font-size: 28px;
+		.imgclick-word {
+			margin-left: 2px;
+			font-size: 16px;
+		}
+	}
+	.imgComment {
+		margin: 20px 0;
+	}
+	.imgCommentList {
+		width: 100%;
+		position: relative;
+		.commentList {
+			position: relative;
+			border-bottom: 1px solid rgba(#999,0.5);
+			img {
+				height: 30px;
+				width: 30px;
+				border-radius: 15px;
+				margin-right: 10px;
+			}
+			.commentText {
+				margin-left: 40px;
+			}
 		}
 	}
 }
