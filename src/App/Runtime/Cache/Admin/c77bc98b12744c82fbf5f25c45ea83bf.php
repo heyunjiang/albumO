@@ -7,6 +7,7 @@
 	<link href="/albumO/src/Public/css/bootstrap.min.css" rel="stylesheet">
   <link href="/albumO/src/Public/css/sweetalert.css" rel="stylesheet">
   <link href="/albumO/src/Public/admin/style.css" rel="stylesheet">
+  <script src="/albumO/src/Public/js/sweetalert.min.js"></script>
 </head>
 <body>
   <div id="my-nav">
@@ -14,7 +15,7 @@
       <img src="/albumO/src/Public/img/icons/border-head1.jpg">小天使
     </div>
     <div class="panel-group" id="accordion">
-      <div class="panel">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion"
@@ -41,7 +42,7 @@
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
+    <div id="collapseTwo" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
             <li><a href="<?php echo U('Admin/Admin/picAdd');?>">图片添加</a></li>
@@ -59,7 +60,7 @@
       </a>
     </h4>
   </div>
-  <div id="collapse3" class="panel-collapse collapse">
+  <div id="collapse3" class="panel-collapse collapse in">
     <div class="panel-body">
       <ul>
             <li><a href="<?php echo U('Admin/Admin/userAdd');?>">用户添加</a></li>
@@ -87,5 +88,6 @@
 	<script src="/albumO/src/Public/js/jquery.min.js"></script>
 	<script src="/albumO/src/Public/js/bootstrap.min.js"></script>
 	<script src="/albumO/src/Public/admin/style.js"></script>
+	<script src="/albumO/src/Public/admin/ajaxInput.js"></script>
 	</body>
 </html>

@@ -1,1 +1,46 @@
 <layout name="layout" />
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+		<div class="title">图片信息</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="add_ac_name" class="col-sm-2 control-label">选择相册</label>
+				<div class="col-sm-10">
+					<select class="form-control" id="pic-choose-album-change">
+						<option value="-1">请选择相册</option>
+						<foreach name="ac_info" item="vo" >
+							<option value="{$vo.ac_id}">{$vo.ac_name}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+		</form>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>图片</th>
+							<th>名称</th>
+							<th>描述</th>
+							<th>点赞</th>
+							<th>封面</th>
+							<th>时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="pic-table-info">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

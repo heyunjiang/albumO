@@ -28,6 +28,7 @@ class IndexController extends BaseController {
             if($data != null){
                 session('user_id',$data['user_id']);
                 session('name',$data['nickname']);
+                session('power',$data['power']);
                 $this->ajaxReturn(1);
             }else {
                 $this->ajaxReturn(0);
@@ -79,6 +80,7 @@ class IndexController extends BaseController {
         }else {
             session('user_id',$userResult['user_id']);
             session('name',$map['nickname']);
+            session('power',$map['power']);
             header("Location: index.html?uploadhead=2");
         }
         
