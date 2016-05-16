@@ -32,6 +32,7 @@
           <li><a>欢迎您：游客</a></li>
           <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
           <li><a href="#" data-toggle="modal" data-target="#register">注册</a></li><?php endif; ?>
+        <li><a>访问量：<?php echo ($total_visit); ?></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

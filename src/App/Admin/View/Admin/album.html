@@ -27,7 +27,7 @@
 								<td>{$vo.ac_name}</td>
 								<td>{$vo.ac_description}</td>
 								<td>{$vo.ac_add_time}</td>
-								<td><a href="#">编辑</a><a href="#">删除</a></td>
+								<td><a href="{:U('Admin/Admin/albumUp',array('ac_id'=>$vo['ac_id']))}" class="btn btn-success">编辑</a>&nbsp;<a href="#" class="ac_delete btn btn-danger" data-ac_id="{$vo.ac_id}">删除</a></td>
 							</tr>
 						</foreach>
 					</tbody>

@@ -50,7 +50,7 @@
     position: relative;
     background: rgba(233,233,233,1);
     .content-head {
-      @include my-box(100%,15%,1px solid #ccc,none);
+      @include my-box(100%,18%,1px solid #ccc,none);
       background: white;
       padding: 10px;
       margin-bottom: 20px;

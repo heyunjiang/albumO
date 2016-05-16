@@ -7,4 +7,8 @@ class BeforeController extends Controller {
             header("Location: ".__ROOT__."/Home/Index/index.html?uploadhead=4");
         }
     }
+    public function addTotal(){
+    	$total = M('total');
+        $total->where('t_id=0')->setInc('t_value',1); 
+    }
 }

@@ -4,6 +4,7 @@ use Think\Controller;
 class AdminController extends BeforeController {
     public function admin(){
         parent::checkLogin();
+        parent::addTotal();
     	$this->display();
     }
     public function albumAdd(){
@@ -31,7 +32,9 @@ class AdminController extends BeforeController {
             $this->assign('status',I('get.status'));
         }
         if(I('get.img_id')){
-            $this->assign('img_info',$this->getImg(I('get.img_id')));
+            $img_info = $this->getImg(I('get.img_id'));
+            $this->assign('ac_info',$this->getAc($img_info['ac_id']));
+            $this->assign('img_info',$img_info);
         }
         $this->display();
     }
@@ -50,7 +53,6 @@ class AdminController extends BeforeController {
         if(I('get.user_id')){
             $this->assign('user_info',$this->getUser(I('get.user_id')));
         }
-        // dump($this->getUser(I('get.user_id')));
         $this->display();
     }
     public function album(){
@@ -107,14 +109,39 @@ class AdminController extends BeforeController {
     }
     //return user select info
     protected function getUser($user_id){
+        $table = M('user');
+        if($user_id!=''){
+            $map = array();
+            $map['user_id'] = $user_id;
+            return $table->where($map)->find();
+        }
         if(session('?power')&&session('power')==2){
-            $table = M('user');
-            if($user_id!=''){
-                $map = array();
-                $map['user_id'] = $user_id;
-                return $table->where($map)->find();
-            }
             return $table->select();
+        }else{
+            $map['user_id'] = session('user_id');
+            return $table->where($map)->select();
+        }
+    }
+
+    //set main for ajax
+    public function pic_main(){
+        if(I('get.ac_id')&&I('get.img_id')) {
+            $table = M('img');
+            $map_to_find['ac_id'] = I('get.ac_id');
+            $map_to_find['img_main'] = '1';
+            $result = $table->where($map_to_find)->find();
+            if($result){
+                $map_to_zero['img_id'] = $result['img_id'];
+                $result1 = $table->where($map_to_zero)->setField('img_main','0');
+            }
+            $map['img_id'] = I('get.img_id');
+            $result2 = $table->where($map)->setField('img_main','1');
+            if($result2){
+                $this->ajaxReturn(1);
+            }else {
+                $this->ajaxReturn(0);
+            }
+            
         }
     }
 
@@ -137,6 +164,9 @@ class AdminController extends BeforeController {
                 }
                 break;
             case "add_img":
+                if(!I('post.ac_id')){
+                    header("Location: picAdd.html?status=1");
+                }
                 $table = M('img');
                 $map['ac_id'] = I('post.ac_id');
                 $map['img_name'] = I('post.img_name');
@@ -211,9 +241,9 @@ class AdminController extends BeforeController {
         switch (I('post.type')) {
             case "up_ac":
                 $table = M('albumcategory');
+                $map['ac_id'] = I('post.ac_id');
                 $map['ac_name'] = I('post.ac_name');
                 $map['ac_description'] = I('post.ac_description');
-                $map['user_id'] = session('user_id');
                 $map['ac_add_time'] = date('y-m-d h:i:s',time());
                 $result = $table->save($map);
                 if($result) {
@@ -258,28 +288,9 @@ class AdminController extends BeforeController {
             case "up_img":
                 $table = M('img');
                 $map['img_id'] = I('post.img_id');
-                $map['ac_id'] = I('post.ac_id');
                 $map['img_name'] = I('post.img_name');
                 $map['img_description'] = I('post.img_description');
-                $map['img_main'] = I('post.img_main');
                 $map['img_add_time'] = date('y-m-d h:i:s',time());
-                if($_FILES['imgurl']['name']){
-                    $upload = new \Think\Upload();
-                    $upload->rootPath  =     '.';
-                    $upload->maxSize   =     20971520;
-                    $upload->exts      =     array('jpg', 'png', 'jpeg');
-                    $upload->savePath  =      '/Public/img/pic/';
-                    $upload->saveName  =     'head'.time();
-                    $upload->replace   =     true;
-                    $upload->autoSub   =     false;
-                    $info   =   $upload->uploadOne($_FILES['imgurl']);
-                    if(!$info) {
-                        header("Location: picUp.html?status=1");
-                        exit;
-                    }else{
-                        $map['img_url'] = $info['savepath'].$info['savename'];
-                    }
-                }
                 $result = $table->save($map);
                 if($result) {
                     header("Location: picUp.html?status=2");

@@ -29,7 +29,7 @@
 								<td>{$vo.nickname}</td>
 								<td>{$vo.sex}</td>
 								<td>{$vo.email}</td>
-								<td><a href="{:U('Admin/Admin/userUp',array('user_id'=>$vo['user_id']))}">编辑</a><a href="#">删除</a></td>
+								<td><a href="{:U('Admin/Admin/userUp',array('user_id'=>$vo['user_id']))}" class="btn btn-success">编辑</a>&nbsp;<a href="#" class="user_delete btn btn-danger" data-user_id="{$vo.user_id}">删除</a></td>
 							</tr>
 						</foreach>
 					</tbody>

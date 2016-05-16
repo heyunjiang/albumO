@@ -62,8 +62,8 @@
   </div>
   <div id="collapse3" class="panel-collapse collapse in">
     <div class="panel-body">
-      <ul>
-            <li><a href="<?php echo U('Admin/Admin/userAdd');?>">用户添加</a></li>
+      <ul> 
+            <?php if(session('power') == 2): ?><li><a href="<?php echo U('Admin/Admin/userAdd');?>">用户添加</a></li><?php endif; ?>
             <li><a href="<?php echo U('Admin/Admin/user');?>">用户浏览</a></li>
           </ul>
     </div>
@@ -74,7 +74,7 @@
 <div class="my-content">
   <div class="my-content-box">
     <div class="content-head">
-      <div class="head-title">web相册后台管理系统</div>
+      <div class="head-title">web相册后台管理系统<a href="<?php echo U('Home/Index/index');?>" class="btn btn-success" style="position: absolute;right: 5%;top: 20px;">首页</a></div>
       <div class="head-des">管理相册、图片、用户</div>
     </div>
     <div class="content">
