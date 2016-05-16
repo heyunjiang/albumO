@@ -50,6 +50,7 @@ class AdminController extends BeforeController {
         if(I('get.user_id')){
             $this->assign('user_info',$this->getUser(I('get.user_id')));
         }
+        // dump($this->getUser(I('get.user_id')));
         $this->display();
     }
     public function album(){
@@ -227,7 +228,7 @@ class AdminController extends BeforeController {
                 $map['password'] = I('post.password');
                 $map['nickname'] = I('post.nickname');
                 $map['sex'] = I('post.sex');
-                $map['user_id'] = session('user_id');
+                $map['user_id'] = I('post.user_id');
                 $map['power'] = I('post.power')?I('post.power'):1;
                 if($_FILES['headurl']['name']){
                     $upload = new \Think\Upload();

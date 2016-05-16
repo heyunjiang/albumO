@@ -1,1 +1,38 @@
 <layout name="layout" />
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="title">相册信息</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>名称</th>
+							<th>描述</th>
+							<th>时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="ac-table-info">
+						<foreach name="ac_info" item="vo" >
+							<tr>
+								<td>{$key}</td>
+								<td>{$vo.ac_name}</td>
+								<td>{$vo.ac_description}</td>
+								<td>{$vo.ac_add_time}</td>
+								<td><a href="#">编辑</a><a href="#">删除</a></td>
+							</tr>
+						</foreach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

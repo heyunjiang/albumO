@@ -1,1 +1,84 @@
 <layout name="layout" />
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="title">用户信息更新</div>
+			<form class="form-horizontal" id="up-user-form" method="post" action="{:U('Admin/Admin/up')}" enctype="multipart/form-data">
+				<div class="form-group">
+				<label for="up-user-email" class="col-sm-2 control-label">邮箱</label>
+					<div class="col-sm-10">
+					<input type="email" name="email" class="form-control" placeholder="Email" value="{$user_info.email}" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+				<label for="up-user-password" class="col-sm-2 control-label">密码</label>
+					<div class="col-sm-10">
+					<input type="password" name="password" class="form-control" placeholder="Password" value="{$user_info.password}" id="up-user-password" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+				<label for="up-user-nickname" class="col-sm-2 control-label">昵称</label>
+					<div class="col-sm-10">
+					<input type="text" name="nickname" class="form-control" placeholder="nickname" value="{$user_info.nickname}" id="up-user-nickname">
+					</div>
+				</div>
+				<div class="form-group">
+				<label for="up-user-sex" class="col-sm-2 control-label">性别</label>
+					<div class="col-sm-5">
+						<switch name="user_info.sex" >
+							<case value="0">
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="sex0" value="0" checked=""> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="sex1" value="1"> 女
+								</label>
+							</case>
+							<case value="1">
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="sex0" value="0"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="sex1" value="1" checked=""> 女
+								</label>
+							</case>
+						</switch>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="headurl" class="col-sm-2 control-label">头像</label>
+					<div class="col-sm-10">
+						<input type="file" name="headurl" class="form-control" id="headurl">
+						<span id="helpBlock" class="help-block">支持 png , jpg , jpeg 的图片，请小于2M</span>
+					</div>
+				</div>
+				<div class="form-group hidden">
+					<label class="col-sm-2 control-label">类型</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="type" value="up_user" placeholder="类型">
+					</div>
+				</div>
+				<div class="form-group hidden">
+					<label class="col-sm-2 control-label">id</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="user_id" value="{$user_info.user_id}" placeholder="id">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-success">提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>
+<script type="text/javascript">
+	if({$status}&&{$status} == 1){
+		sweetAlert({title: "更新失败"},function(){window.location.href = "{:U('Admin/Admin/user')}";})
+	}else if({$status}&&{$status} == 2){
+		sweetAlert({title: "更新成功"},function(){window.location.href = "{:U('Admin/Admin/user')}";})
+	}
+</script>

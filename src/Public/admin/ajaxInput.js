@@ -38,8 +38,8 @@
                     content+="<td>"+data[i]['img_description']+"</td>";
                     content+="<td>"+data[i]['img_click']+"</td>";
                     content+="<td>"+data[i]['img_main']+"</td>";
-                    content+="<td>"+data[i]['img_add_titme']+"</td>";
-                    content+="<td><a href='#'>编辑</a><a href='#'>删除</a></td>";
+                    content+="<td>"+data[i]['img_add_time']+"</td>";
+                    content+="<td><a href='/albumO/src/Admin/Admin/picUp?img_id="+data[i]['img_id']+"'>编辑</a><a href='#'>删除</a></td>";
                     content+="</tr>"
                 }
                 $("#pic-table-info").append(content)
