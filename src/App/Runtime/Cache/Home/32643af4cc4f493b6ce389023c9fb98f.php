@@ -32,6 +32,7 @@
           <li><a>欢迎您：游客</a></li>
           <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
           <li><a href="#" data-toggle="modal" data-target="#register">注册</a></li><?php endif; ?>
+        <li><a>访问量：<?php echo ($total_visit); ?></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -40,24 +41,7 @@
 <div class="wang-container">
    <div id="wang-btn">cool</div>
    <div id="wang-wrp" class="wang-no-style" >
-      <img src="/albumO/src/Public/img/icons/1.jpg" data-id="1">
-      <img src="/albumO/src/Public/img/icons/2.jpg" data-id="2">
-      <img src="/albumO/src/Public/img/icons/3.jpg" data-id="3">
-      <img src="/albumO/src/Public/img/icons/4.jpg" data-id="4">
-      <img src="/albumO/src/Public/img/icons/5.jpg" data-id="5">
-      <img src="/albumO/src/Public/img/icons/base1.png" data-id="6">
-      <img src="/albumO/src/Public/img/icons/base2.png" data-id="7">
-      <img src="/albumO/src/Public/img/icons/base3.png" >
-      <img src="/albumO/src/Public/img/icons/base4.png" >
-      <img src="/albumO/src/Public/img/icons/base5.png" >
-      <img src="/albumO/src/Public/img/icons/ly1.png" >
-      <img src="/albumO/src/Public/img/icons/ly2.png" >
-      <img src="/albumO/src/Public/img/icons/ly3.png" >
-      <img src="/albumO/src/Public/img/icons/1.jpg" >
-      <img src="/albumO/src/Public/img/icons/2.jpg" >
-      <img src="/albumO/src/Public/img/icons/5.jpg" data-id="5">
-      <img src="/albumO/src/Public/img/icons/base1.png" data-id="6">
-      <img src="/albumO/src/Public/img/icons/base2.png" data-id="7">
+      <?php if(is_array($img_info)): foreach($img_info as $key=>$vo): ?><img src="/albumO/src/<?php echo ($vo["img_url"]); ?>" data-id="<?php echo ($vo["img_id"]); ?>"><?php endforeach; endif; ?>
    </div>
 </div>
    
@@ -70,10 +54,10 @@
             <div class="imgUser">
                   <p><img src="/albumO/src/Public/img/icons/border-head1.jpg"><span class="user-name">小天使</span><span class="time">2016.5.12</span></p>
             </div>
-            <div class="imgdis">都和这些款式差不多。各种颜色都有 夏天来了 背个简单的包包</div>
+            <div class="imgdis"></div>
             <div class="imgclick">
-                  <span class="glyphicon glyphicon-heart-empty text-danger pointer-cursor" aria-hidden="true"></span>
-                  <div class="imgclick-word inline-div"><span style="color: #CC0000;">10</span>&nbsp;人喜欢</div>
+                  <span class="glyphicon glyphicon-heart-empty text-danger pointer-cursor click" aria-hidden="true"></span>
+                  <div class="imgclick-word inline-div"><span style="color: #CC0000;" class="love_count">10</span>&nbsp;人喜欢</div>
             </div>
             <div class="imgComment">
                   <form class="form-inline">
@@ -81,24 +65,13 @@
                           <label for="imgComment-input"></label>
                           <input type="text" class="form-control" id="imgComment-input" placeholder="我也说一句">
                         </div>
-                        <?php if(session('?name')): ?><button type="submit" class="btn btn-success">评论</button>
+                        <?php if(session('?name')): ?><button type="button" class="btn btn-success commit">评论</button>
                         <?php else: ?>
-                           <button type="submit" class="btn btn-success" disabled>评论</button><?php endif; ?>
+                           <button type="button" class="btn btn-success commit" disabled>评论</button><?php endif; ?>
                   </form>
             </div>
             <div class="imgCommentList">
-                  <div class="commentList">
-                        <img src="/albumO/src/Public/img/icons/border-head.jpg"><span class="user-name">小天使</span>
-                        <p class="commentText">我都不知道你在说什么</p>
-                  </div>
-                  <div class="commentList">
-                        <img src="/albumO/src/Public/img/icons/border-head1.jpg"><span class="user-name">小天使</span>
-                        <p class="commentText">天苍苍，野莽莽</p>
-                  </div>
-                  <div class="commentList">
-                        <img src="/albumO/src/Public/img/icons/border-head.jpg"><span class="user-name">小天使</span>
-                        <p class="commentText">尼真的好帅</p>
-                  </div>
+                  
             </div>
       </div>
 </div>

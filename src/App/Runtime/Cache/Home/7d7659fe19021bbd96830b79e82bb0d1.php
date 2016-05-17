@@ -43,117 +43,29 @@
 		<div class="col-xs-12 col-md-12 album-box-box">
 			<img src="/albumO/src/Public/img/icons/border-head.jpg" class="album-box-border-head">
 			<div class="album-box-border">
-				<div class="row">
-					<div class="album-box-border-leaf">
-						<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-						<span>2016.5.9</span>
-					</div>
+				<?php if(is_array($ac_info)): foreach($ac_info as $key=>$vo): if($key == 0): ?><div class="row">
+							<div class="album-box-border-leaf">
+								<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+								<span><?php echo ($vo["ac_add_time"]); echo ($key); ?></span>
+							</div>
+					<?php elseif(($vo["ac_add_time"] != $ac_info[$key-1]['ac_add_time'])): ?>
+						</div>
+						<div class="row">
+							<div class="album-box-border-leaf">
+								<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+								<span><?php echo ($vo["ac_add_time"]); ?></span>
+							</div><?php endif; ?>
 					<div class="col-xs-6 col-md-4">
 						<div class="album-box">
-							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/car1.jpg" class="pointer-cursor"></a>
-							<div class="album-box-imglength">23</div>
+							<a href="<?php echo U('Home/Index/photos',array('ac_id'=>$vo['ac_id']));?>"><img src="/albumO/src/<?php echo ($vo["img_url"]); ?>" class="pointer-cursor"></a>
+							<div class="album-box-imglength"></div>
 							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂</p>
+								<p><img src="/albumO/src/<?php echo ($vo["headurl"]); ?>"> <?php echo ($vo["nickname"]); ?></p>
+								<p>相册: <span><?php echo ($vo["ac_name"]); ?></span></p>
+								<p>描述: <?php echo ($vo["ac_description"]); ?></p>
 							</div>
 						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<a href="<?php echo U('Home/Index/photos');?>"><img src="/albumO/src/Public/img/icons/test1.png" class="pointer-cursor"></a>
-							<div class="album-box-imglength">12</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head.jpg"> 曾林</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/food1.png" class="pointer-cursor">
-							<div class="album-box-imglength">33</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂来最美丽的地方，我带你感受天堂</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/food2.png" class="pointer-cursor">
-							<div class="album-box-imglength">52</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="album-box-border-leaf">
-						<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-						<span>2016.5.7</span>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/food3.png" class="pointer-cursor">
-							<div class="album-box-imglength">6</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/food4.png" class="pointer-cursor">
-							<div class="album-box-imglength">4</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/food5.png" class="pointer-cursor">
-							<div class="album-box-imglength">6</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
-							<div class="album-box-imglength">3</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
-							<div class="album-box-imglength">23</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="album-box">
-							<img src="/albumO/src/Public/img/icons/test.png" class="pointer-cursor">
-							<div class="album-box-imglength">34</div>
-							<div class="album-box-content">
-								<p><img src="/albumO/src/Public/img/icons/border-head1.jpg"> 小天使</p>
-								<p>描述: 来最美丽的地方，我带你感受天堂来最美丽的地方</p>
-							</div>
-						</div>
-					</div>
+					</div><?php endforeach; endif; ?>
 				</div>
 			</div>
 		</div>

@@ -5,14 +5,17 @@ class AdminController extends BeforeController {
     public function admin(){
         parent::checkLogin();
         parent::addTotal();
+        $this->assign('userhead',$this->getUser(session('user_id')));
     	$this->display();
     }
     public function albumAdd(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
     	$this->display();
     }
     public function albumUp(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         if(I('get.ac_id')){
             $this->assign('ac_info',$this->getAc(I('get.ac_id')));
         }
@@ -20,6 +23,7 @@ class AdminController extends BeforeController {
     }
     public function picAdd(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('ac_info',$this->getAc());
         if(I('get.status')){
             $this->assign('status',I('get.status'));
@@ -28,6 +32,7 @@ class AdminController extends BeforeController {
     }
     public function picUp(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         if(I('get.status')){
             $this->assign('status',I('get.status'));
         }
@@ -40,6 +45,7 @@ class AdminController extends BeforeController {
     }
     public function userAdd(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         if(I('get.status')){
             $this->assign('status',I('get.status'));
         }
@@ -47,6 +53,7 @@ class AdminController extends BeforeController {
     }
     public function userUp(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         if(I('get.status')){
             $this->assign('status',I('get.status'));
         }
@@ -57,16 +64,19 @@ class AdminController extends BeforeController {
     }
     public function album(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('ac_info',$this->getAc());
     	$this->display();
     }
     public function pic(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('ac_info',$this->getAc());
     	$this->display();
     }
     public function user(){
         parent::checkLogin();
+        $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('user_info',$this->getUser());
     	$this->display();
     }
@@ -155,7 +165,7 @@ class AdminController extends BeforeController {
                 $map['ac_name'] = I('post.ac_name');
                 $map['ac_description'] = I('post.ac_description');
                 $map['user_id'] = session('user_id');
-                $map['ac_add_time'] = date('y-m-d h:i:s',time());
+                $map['ac_add_time'] = date('y-m-d',time());
                 $result = $table->add($map);
                 if($result) {
                     $this->ajaxReturn(1);

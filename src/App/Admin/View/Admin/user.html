@@ -29,7 +29,11 @@
 								<td>{$vo.nickname}</td>
 								<td>{$vo.sex}</td>
 								<td>{$vo.email}</td>
+								<if condition="$vo['user_id'] eq session('user_id')">
+								<td><a href="{:U('Admin/Admin/userUp',array('user_id'=>$vo['user_id']))}" class="btn btn-success">编辑</a></td>
+								<else /> 
 								<td><a href="{:U('Admin/Admin/userUp',array('user_id'=>$vo['user_id']))}" class="btn btn-success">编辑</a>&nbsp;<a href="#" class="user_delete btn btn-danger" data-user_id="{$vo.user_id}">删除</a></td>
+								</if>
 							</tr>
 						</foreach>
 					</tbody>

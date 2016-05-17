@@ -12,7 +12,7 @@
 <body>
   <div id="my-nav">
     <div class="nav-head">
-      <img src="/albumO/src/Public/img/icons/border-head1.jpg">小天使
+      <img src="/albumO/src/<?php echo ($userhead["headurl"]); ?>"><?php echo ($userhead["nickname"]); ?>
     </div>
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
