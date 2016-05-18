@@ -72,14 +72,11 @@ class IndexController extends BaseController {
         }else {
             $map['headurl'] = "/Public/img/head/default.jpg";
         }
-
         $userResult = parent::checkExist('user','email',$map['email']);
         if($userResult){
             header("Location: index.html?uploadhead=3");
             exit;
         }
-
-
         $result = $user->add($map);
         if(!$result){
             header("Location: index.html?uploadhead=1");
