@@ -50,7 +50,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 album-box-box">
-			<img src="/albumO/src/Public/img/icons/border-head.jpg" class="album-box-border-head">
+			<img src="/albumO/src/Public/img/head/head1462947674.jpg" class="album-box-border-head">
 			<div class="album-box-border">
 				<?php if(is_array($ac_info)): foreach($ac_info as $key=>$vo): if($key == 0): ?><div class="row">
 							<div class="album-box-border-leaf">
