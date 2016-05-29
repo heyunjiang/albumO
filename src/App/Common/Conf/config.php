@@ -3,7 +3,7 @@ return array(
 	//'配置项'=>'配置值'
 	'URL_HTML_SUFFIX'=>'',
 	'URL_MODEL'             =>  2, 
-	'SHOW_PAGE_TRACE' =>true, 
+	'SHOW_PAGE_TRACE' =>false, 
 	'MODULE_ALLOW_LIST'    =>    array('Home','Admin'),
 	'DB_TYPE' =>'mysql',
 	'DB_HOST' =>'localhost',

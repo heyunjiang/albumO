@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 class IndexController extends BaseController {
+    //首页
     public function index(){
         parent::index();
     	$user = M('user');
@@ -9,6 +10,7 @@ class IndexController extends BaseController {
         $this->assign('ac_info',$this->getAcInfo());
     	$this->display();
     }
+    //我的相册
     public function myalbum(){
         parent::checkLogin();
         parent::index();
@@ -16,6 +18,7 @@ class IndexController extends BaseController {
         $this->assign('ac_info',$this->getAcInfo(session('user_id')));
     	$this->display();
     }
+    //具体相册信息
     public function photos(){
         parent::index();
     	$user = M('user');
@@ -26,6 +29,10 @@ class IndexController extends BaseController {
         $this->assign('img_info',$this->getImgInfo(I('get.ac_id')));
     	$this->display();
     }
+    /*  登录控制
+    *   requird email,password
+    *   return 1 for success, 0 for fail
+    */
     public function login(){
         if (I('post.email')&&I('post.password')) {
             $user = M('user');
@@ -36,16 +43,22 @@ class IndexController extends BaseController {
                 session('user_id',$data['user_id']);
                 session('name',$data['nickname']);
                 session('power',$data['power']);
+                parent::addTotal();
                 $this->ajaxReturn(1);
             }else {
                 $this->ajaxReturn(0);
             }
         }
     }
+    /*  注销
+    */
     public function login_out(){
         session(null);
         header("Location: index.html");
     }
+    /*  注册控制
+    *   requird email,password,nickname,sex,headurl
+    */
     public function register(){
         $user = M('user');
         $map['email'] = I('post.email');
@@ -85,11 +98,12 @@ class IndexController extends BaseController {
             session('user_id',$result);
             session('name',$map['nickname']);
             session('power',$map['power']);
+            parent::addTotal();
             header("Location: index.html?uploadhead=2");
         }
         
     }
-    //return albumcategory infomation array
+    //返回所有相册信息，如果传入用户id，则返回对应用户上传得相册信息
     protected function getAcInfo($user_id){
         $table = M('albumcategory');
         if($user_id != ''){
@@ -103,7 +117,7 @@ class IndexController extends BaseController {
                          ->select();
         return $ac_info;
     }
-    //return img information array
+    //返回指定相册的所有图片信息
     protected function getImgInfo($ac_id){
         $table = M('img');
         $map = array();
@@ -114,7 +128,7 @@ class IndexController extends BaseController {
             return $map;
         }
     }
-    //return one pic information for ajax
+    //返回单张图片信息 ajax方法
     public function getPicInfor(){
         if(I('get.img_id')){
             $table = M('img');
@@ -130,7 +144,7 @@ class IndexController extends BaseController {
             exit;
         }
     }
-    //return message information for one pic ajax
+    //返回留言信息 ajax方法
     public function getMsgInfor(){
         if(I('get.img_id')){
             $table = M('message');
@@ -145,7 +159,7 @@ class IndexController extends BaseController {
             exit;
         }
     }
-    //commit message for ajax
+    //添加留言 ajax方法
     public function addMsg(){
         if(I('post.img_id')&&I('post.m_content')){
             $table = M('message');
@@ -165,7 +179,7 @@ class IndexController extends BaseController {
             $this->ajaxReturn(0);
         }
     }
-    //commit click for ajax
+    //点赞
     public function addClick(){
         if(I('post.img_id')){
             $table = M('img');

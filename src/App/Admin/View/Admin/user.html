@@ -1,3 +1,4 @@
+<!-- 用户信息浏览 -->
 <layout name="layout" />
 <div class="container">
 	<div class="row">
@@ -27,7 +28,7 @@
 								<td>{$key}</td>
 								<td><img src='/albumO/src/{$vo.headurl}' style='height:40px;width:40px;border-radius: 20px;'></td>
 								<td>{$vo.nickname}</td>
-								<td>{$vo.sex}</td>
+								<td><php>echo ($vo["sex"]?"女":"男");</php></td>
 								<td>{$vo.email}</td>
 								<if condition="$vo['user_id'] eq session('user_id')">
 								<td><a href="{:U('Admin/Admin/userUp',array('user_id'=>$vo['user_id']))}" class="btn btn-success">编辑</a></td>

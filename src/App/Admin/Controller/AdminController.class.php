@@ -2,17 +2,19 @@
 namespace Admin\Controller;
 use Think\Controller;
 class AdminController extends BeforeController {
+    //后台首页
     public function admin(){
         parent::checkLogin();
-        parent::addTotal();
         $this->assign('userhead',$this->getUser(session('user_id')));
     	$this->display();
     }
+    //添加相册页面
     public function albumAdd(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
     	$this->display();
     }
+    //更新相册页面
     public function albumUp(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
@@ -21,6 +23,7 @@ class AdminController extends BeforeController {
         }
         $this->display();
     }
+    //添加图片页面
     public function picAdd(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
@@ -30,6 +33,7 @@ class AdminController extends BeforeController {
         }
     	$this->display();
     }
+    //更新图片页面
     public function picUp(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
@@ -43,6 +47,7 @@ class AdminController extends BeforeController {
         }
         $this->display();
     }
+    //添加用户页面
     public function userAdd(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
@@ -51,6 +56,7 @@ class AdminController extends BeforeController {
         }
     	$this->display();
     }
+    //更新用户页面
     public function userUp(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
@@ -62,25 +68,28 @@ class AdminController extends BeforeController {
         }
         $this->display();
     }
+    //相册浏览页面
     public function album(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('ac_info',$this->getAc());
     	$this->display();
     }
+    //图片浏览页面
     public function pic(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('ac_info',$this->getAc());
     	$this->display();
     }
+    //用户信息浏览页面
     public function user(){
         parent::checkLogin();
         $this->assign('userhead',$this->getUser(session('user_id')));
         $this->assign('user_info',$this->getUser());
     	$this->display();
     }
-    //return ac selectr info
+    //返回相册信息
     protected function getAc($ac_id){
         $table = M('albumcategory');
         $map = array();
@@ -93,7 +102,7 @@ class AdminController extends BeforeController {
         }
         return $table->where($map)->select();
     }
-    //return ac selectr info
+    //返回图片信息
     protected function getImg($img_id){
         $table = M('img');
         $map = array();
@@ -101,11 +110,11 @@ class AdminController extends BeforeController {
         return $table->where($map)->find();
         
     }
-    //return ac selectr info ajax
+    //返回相册信息 ajax方法调用
     public function getAcInfo(){
         $this->ajaxReturn($this->getAc());
     }
-    //return img select info ajax
+    //发挥图片信息 ajax方法调用
     public function getImgInfo(){
         $table = M('img');
         $map = array();
@@ -117,7 +126,7 @@ class AdminController extends BeforeController {
             $this->ajaxReturn(0);
         }
     }
-    //return user select info
+    //返回用户信息
     protected function getUser($user_id){
         $table = M('user');
         if($user_id!=''){
@@ -133,7 +142,7 @@ class AdminController extends BeforeController {
         }
     }
 
-    //set main for ajax
+    //设置相册封面 ajax方法调用
     public function pic_main(){
         if(I('get.ac_id')&&I('get.img_id')) {
             $table = M('img');
@@ -154,12 +163,13 @@ class AdminController extends BeforeController {
             
         }
     }
-
+    //添加控制
     public function addCtr(){
         parent::checkLogin();
         $table = '';
         $map = array();
         switch (I('post.type')) {
+            //添加相册控制
             case "add_ac":
                 $table = M('albumcategory');
                 $map['ac_name'] = I('post.ac_name');
@@ -173,6 +183,7 @@ class AdminController extends BeforeController {
                     $this->ajaxReturn(0);
                 }
                 break;
+            //添加图片控制
             case "add_img":
                 if(!I('post.ac_id')){
                     header("Location: picAdd.html?status=1");
@@ -207,6 +218,7 @@ class AdminController extends BeforeController {
                 }
                 exit;
                 break;
+            //添加用户控制
             case "add_user":
                 $table = M('user');
                 $map['email'] = I('post.email');
@@ -244,11 +256,13 @@ class AdminController extends BeforeController {
                 break;
         }
     }
+    //更新控制
     public function up(){
         parent::checkLogin();
         $table = '';
         $map = array();
         switch (I('post.type')) {
+            //更新相册信息
             case "up_ac":
                 $table = M('albumcategory');
                 $map['ac_id'] = I('post.ac_id');
@@ -262,6 +276,7 @@ class AdminController extends BeforeController {
                     $this->ajaxReturn(0);
                 }
                 break;
+            //更新用户信息
             case "up_user":
                 $table = M('user');
                 $map['email'] = I('post.email');
@@ -295,6 +310,7 @@ class AdminController extends BeforeController {
                 }
                 exit;
                 break;
+            //更新图片信息
             case "up_img":
                 $table = M('img');
                 $map['img_id'] = I('post.img_id');
@@ -314,20 +330,23 @@ class AdminController extends BeforeController {
                 break;
         }
     }
-    //get type id
+    //删除控制 ajax方法调用
     public function del(){
         parent::checkLogin();
         $table = '';
         $map = array();
         switch (I('get.type')) {
+            //删除相册
             case 'del_ac':
                 $table = M('albumcategory');
                 $map['ac_id'] = I('get.ac_id');
                 break;
+            //删除图片
             case 'del_img':
                 $table = M('img');
                 $map['img_id'] = I('get.img_id');
                 break;
+            //删除用户
             case 'del_user':
                 $table = M('user');
                 $map['user_id'] = I('get.user_id');
