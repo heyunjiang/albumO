@@ -189,6 +189,14 @@ class AdminController extends BeforeController {
                     header("Location: picAdd.html?status=1");
                 }
                 $table = M('img');
+
+                $map_to_find['ac_id'] = I('post.ac_id');
+                $map_to_find['img_main'] = '1';
+                $result_find = $table->where($map_to_find)->find();
+                if(!$result_find) {
+                    $map['img_main'] = '1';
+                }
+
                 $map['ac_id'] = I('post.ac_id');
                 $map['img_name'] = I('post.img_name');
                 $map['img_description'] = I('post.img_description');

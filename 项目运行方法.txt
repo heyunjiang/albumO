@@ -1,0 +1,15 @@
+1、在windows环境下安装 phpStudy 运行环境
+
+2、双击运行，点击启动，在浏览器输入网址 localhost ，如果出现phpStudy探针,则运行成功
+
+3、打开phpStudy软件目录，找到WWW根目录，进入，并且将albumO项目文件放入其中
+
+4、浏览器输入 localhost/phpmyadmin，进入数据库管理登录界面，默认root root
+
+5、新建数据库，名字：albumO,编码 utf8_general_ci
+
+6、单击albumO数据库，然后点击导入，选择文件 albumO.sql，导入数据
+
+7、修改项目配置文件：albumO/src/App/Common/conf/config.php，修改对应的数据库用户和密码，对应值为你进入phpmyadmin管理界面的值即可，默认root root，一般无需改动
+
+8、浏览器输入 localhost/albumO/src 则成功运行项目，即可进行相应操作

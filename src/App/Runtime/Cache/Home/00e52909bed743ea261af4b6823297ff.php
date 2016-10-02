@@ -55,7 +55,7 @@
 				<?php if(is_array($ac_info)): foreach($ac_info as $key=>$vo): if($key == 0): ?><div class="row">
 							<div class="album-box-border-leaf">
 								<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-								<span><?php echo ($vo["ac_add_time"]); echo ($key); ?></span>
+								<span><?php echo ($vo["ac_add_time"]); ?></span>
 							</div>
 					<?php elseif(($vo["ac_add_time"] != $ac_info[$key-1]['ac_add_time'])): ?>
 						</div>
